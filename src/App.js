@@ -1,24 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import { Route, Routes } from 'react-router-dom';
+// import './App.css';
+import Connect from './Screens/Connect';
+import UserDashboard from './Screens/UserDashboard';
+import Responsable from './Screens/Responsable';
+// import { Responsable } from './Screens/Responsable';
+// import Laboratoirelist from './Screens/Laboratoirelist';
+// import  Reservation  from './Screens/Reservation';
+// import Dashboard from './Screens/Dashboard';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+   <div className='App'>
+    <Routes>
+      <Route path='/' element=''>
+        <Route index element={<Connect/>} />
+        <Route path='dashboard' element={<UserDashboard/>} />
+        <Route path='responsable' element={<Responsable/>} />
+        {/* <Route index element={<Responsable/>}/> */}
+      </Route>
+    </Routes>
+   </div>
   );
 }
 
